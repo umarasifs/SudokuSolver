@@ -13,4 +13,4 @@ Using this program, the User is able to:
 * View the Sudoku being solved in real time
 * Reset the board position
 ## Running Application
-![](sudoku_solver.gif)
+![](sudoku_solver.gif.gif)
