@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcda3ca8-c75e-4728-8767-b38ccceb071f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/SudokuGUI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/SudokuGUI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sudoku.py" beforeDir="false" afterPath="$PROJECT_DIR$/sudoku.py" afterDir="false" />
@@ -30,7 +32,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SodokuVisual" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -42,7 +44,7 @@
       <recent name="C:\Users\umara\PycharmProjects\SodokuGUI" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.main (2)">
     <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="SudokuGUI" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -56,6 +58,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main (2)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="SodokuVisual" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../SodokuVisual" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../SodokuVisual/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -87,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.main (2)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.main (1)" />
       </list>
@@ -110,26 +134,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="900" y="249" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1536.824@0.0.1536.824" timestamp="1584711095618" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1584628800753">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1584740725681">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584628800753" />
-    <state width="1515" height="206" key="GridCell.Tab.0.bottom" timestamp="1584723423885">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584740725681" />
+    <state width="748" height="206" key="GridCell.Tab.0.bottom" timestamp="1584743975379">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584723423885" />
-    <state width="1515" height="206" key="GridCell.Tab.0.center" timestamp="1584723423885">
+    <state width="748" height="206" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584743975379" />
+    <state width="748" height="206" key="GridCell.Tab.0.center" timestamp="1584743975379">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="206" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584723423885" />
-    <state width="1515" height="206" key="GridCell.Tab.0.left" timestamp="1584723423884">
+    <state width="748" height="206" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584743975379" />
+    <state width="748" height="206" key="GridCell.Tab.0.left" timestamp="1584743975379">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="206" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584723423884" />
-    <state width="1515" height="206" key="GridCell.Tab.0.right" timestamp="1584723423885">
+    <state width="748" height="206" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584743975379" />
+    <state width="748" height="206" key="GridCell.Tab.0.right" timestamp="1584743975379">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="206" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584723423885" />
+    <state width="748" height="206" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584743975379" />
     <state width="745" height="261" key="GridCell.Tab.1.bottom" timestamp="1584651645979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -150,10 +174,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="55" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584629176622" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1584719662957">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1584740717611">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584719662957" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584740717611" />
     <state x="848" y="147" width="609" height="536" key="find.popup" timestamp="1584646738387">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

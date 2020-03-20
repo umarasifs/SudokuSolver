@@ -2,7 +2,6 @@ import pygame
 import box
 import sudoku
 import threading
-import multiprocessing
 import sys
 
 
@@ -12,6 +11,7 @@ pygame.init()
 height, width = 700,500
 font = pygame.font.Font('Font.ttf', 24)
 font_small = pygame.font.Font('Font.ttf', 15)
+
 
 #screen size
 screen = pygame.display.set_mode((width, height))
@@ -32,7 +32,7 @@ for i in range(3):
     for j in range(3):
         Big_Boxes.append(box.Box(screen, (0,0,0),
                                  (width/20 + width*3*j/10, height/7 + width*3*i/10,width*3/10, width*3/10),
-                                 width//200))
+                                 3))
 
 #1x1 Boxes
 Small_Boxes = []
@@ -70,11 +70,15 @@ def update():
         Small_Boxes[i].display_num()
     pygame.display.update()
 
-
-
-
-update_thread = threading.Thread(target=update)
-algorithm_thread = threading.Thread(target=sudoku.complete)
+def update_lite():
+    for i in range(9):
+        for j in range(9):
+            z = 9 * i + j
+            Small_Boxes[z].change_num(sudoku.Table[i][j])
+            Small_Boxes[z].fill(sudoku.Colours[z])
+            Small_Boxes[z].draw()
+            Small_Boxes[z].display_num()
+    pygame.display.update( (width// 20, height //7, width *9 //10, width*9//10))
 
 
 
@@ -103,7 +107,7 @@ while running:
                         if sudoku.Table[box_pressed_num // 9][box_pressed_num % 9] != 0:
                             sudoku.Colours[box_pressed_num] = (119, 235, 77)
                         else:
-                            sudoku.Colours[box_pressed_num] = (255,255,255)
+                            sudoku.Colours[box_pressed_num] = sudoku.colours_default[box_pressed_num]
 
 
                     if event.key == pygame.K_0 or event.key == pygame.K_KP0:
@@ -131,6 +135,21 @@ while running:
 
             if not box_pressed:
                 if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_CAPSLOCK:
+                        sudoku.Table =  [[8,0,0,0,0,0,0,0,0],
+                                         [0,0,3,6,0,0,0,0,0],
+                                         [0,7,0,0,9,0,2,0,0],
+                                         [0,5,0,0,0,7,0,0,0],
+                                         [0,0,0,0,4,5,7,0,0],
+                                         [0,0,0,1,0,0,0,3,0],
+                                         [0,0,1,0,0,0,0,6,8],
+                                         [0,0,8,5,0,0,0,1,0],
+                                         [0,9,0,0,0,0,4,0,0]]
+                        for y in range(9):
+                            for x in range(9):
+                                if sudoku.Table[y][x] != 0:
+                                    sudoku.Colours[y * 9 + x]=(119, 235, 77)
+
                     if event.key == pygame.K_SPACE:
                         solving = True
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -141,7 +160,7 @@ while running:
                             for j in range(9):
                                 sudoku.Table[i][j] = 0
                         for i in range(81):
-                            sudoku.Colours[i]=((255,255,255))
+                            sudoku.Colours[i] = sudoku.colours_default[i]
                     (x0,y0, w,h) = Border.get_size()
                     if x >= x0 and x <= x0+w and y >= y0 and y <=y0+h:
                         for i in range(9):
@@ -165,12 +184,17 @@ while running:
     display_text(font_small, "Press ENTER when done. Press SPACE to Solve", (width / 100, height * 18 / 20))
 
     update()
+
+    t = threading.Thread(target=sudoku.complete)
     if solving:
-        t = threading.Thread(target=sudoku.complete)
         t.start()
     while not sudoku.Done_Solving and solving:
-        update()
+        pygame.event.get()
+        l = threading.Thread(target=update_lite)
+        l.start()
+        l.join()
     if solving:
+        t.join()
         sudoku.Done_Solving=False
     solving =False
 

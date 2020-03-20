@@ -11,12 +11,29 @@ Table = [[0,0,0,0,0,0,0,0,0],
          [0,0,0,0,0,0,0,0,0],
          [0,0,0,0,0,0,0,0,0],
          [0,0,0,0,0,0,0,0,0],
-         [0,0,0,0,0,0,0,0,0],
          [0,0,0,0,0,0,0,0,0]]
 
+colours_default = []
 Colours = []
+
 for i in range(81):
-    Colours.append((255,255,255))
+    if i < 27:
+        if i // 3 == 1 or i // 3 == 4 or i // 3 == 7:
+            colours_default.append((181, 186, 182))
+        else:
+            colours_default.append((255,255,255))
+    elif i > 26 and i < 54:
+        if i // 3 == 10 or i // 3 == 13 or i // 3 == 16:
+            colours_default.append((255, 255, 255))
+        else:
+            colours_default.append((181, 186, 182))
+    else:
+        if i // 3 == 19 or i // 3 == 22 or i // 3 == 25:
+            colours_default.append((181, 186, 182))
+        else:
+            colours_default.append((255, 255, 255))
+    Colours.append(colours_default[i])
+
 
 
 def find_empty():
@@ -44,20 +61,13 @@ def check(y,x,z):
     return True
 
 def complete():
-    if solve(0.005):
-        global Done_Solving
-        Done_Solving = True
+    if solve():
+        pass
+    global Done_Solving
+    Done_Solving = True
 
-def quick_solve():
-    if solve(0):
-        global Done_Solving
-        Done_Solving = True
-
-def solution_check():
-    return solve(0)
-
-def solve(sec):
-    time.sleep(sec)
+def solve():
+    time.sleep(0.005)
     global Table
     pos = find_empty()
     if not pos:
@@ -70,7 +80,7 @@ def solve(sec):
         if check(y,x,z):
             Table[y][x] = z
             Colours[y * 9 + x]=((119, 235, 77))
-            if solve(sec):
+            if solve():
                 return True
             else:
                 Table[y][x] = 0
