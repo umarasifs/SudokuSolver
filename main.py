@@ -2,8 +2,10 @@ import pygame
 import box
 import sudoku
 import threading
+import multiprocessing
 import sys
-import time
+
+
 
 #initialization
 pygame.init()
@@ -55,7 +57,6 @@ def display_text(fonts, text, pos, color = (0,0,0)):
 
 #update boxes on the screen
 def update():
-
     reset.draw()
     reset.display_string("Reset")
     Border.draw()
@@ -73,7 +74,7 @@ def update():
 
 
 update_thread = threading.Thread(target=update)
-algorithm_thread = threading.Thread(target=sudoku.solve)
+algorithm_thread = threading.Thread(target=sudoku.complete)
 
 
 
@@ -87,8 +88,6 @@ while running:
             running = False
             pygame.quit()
             sys.exit()
-            update_thread.join()
-            algorithm_thread.join()
         if not solving :
             (x,y)= pygame.mouse.get_pos()
             (x0,y0, w,h) = reset.get_size()
@@ -167,9 +166,12 @@ while running:
 
     update()
     if solving:
-
-        update_thread.start()
-        algorithm_thread.start()
+        t = threading.Thread(target=sudoku.complete)
+        t.start()
+    while not sudoku.Done_Solving and solving:
+        update()
+    if solving:
+        sudoku.Done_Solving=False
     solving =False
 
 

@@ -1,7 +1,7 @@
 import time
 
 
-
+Done_Solving = False
 
 Table = [[0,0,0,0,0,0,0,0,0],
          [0,0,0,0,0,0,0,0,0],
@@ -43,24 +43,21 @@ def check(y,x,z):
                 return False
     return True
 
-def print_board():
-    global Table
-    print()
-    for i in range (9):
-        if i%3 == 0 and i != 0:
-            print("- - - - - - - - -")
+def complete():
+    if solve(0.005):
+        global Done_Solving
+        Done_Solving = True
 
-        for j in range(9):
-            if j%3 == 0 and j !=0:
-                print("|", end="")
-            print(str(Table[i][j]) + " ", end="")
-            if j == 8:
-                print()
-    print()
+def quick_solve():
+    if solve(0):
+        global Done_Solving
+        Done_Solving = True
 
+def solution_check():
+    return solve(0)
 
-def solve():
-    time.sleep(0.0005)
+def solve(sec):
+    time.sleep(sec)
     global Table
     pos = find_empty()
     if not pos:
@@ -73,7 +70,7 @@ def solve():
         if check(y,x,z):
             Table[y][x] = z
             Colours[y * 9 + x]=((119, 235, 77))
-            if solve():
+            if solve(sec):
                 return True
             else:
                 Table[y][x] = 0
